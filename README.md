@@ -1,38 +1,212 @@
-# hello-devops
+# Hello-DevOps
 
-This template should help get you started developing with Vue 3 in Vite.
+Vue.js + Docker + CI/CD + Terraform + Dev Container projekt.
 
-## Recommended IDE Setup
+---
 
-[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+# Projekt funkciók
 
-## Recommended Browser Setup
+- Vue.js alkalmazás
+- Dockerizált futtatás
+- GitHub Actions CI pipeline
+- Docker Hub registry publish
+- Dev Container támogatás
+- Terraform Infrastructure as Code
 
-- Chromium-based browsers (Chrome, Edge, Brave, etc.):
-  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
-  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
-- Firefox:
-  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
-  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
+---
 
-## Customize configuration
+# Projekt indítása lokálisan
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+## Függőségek telepítése
 
-## Project Setup
-
-```sh
+```bash
 npm install
 ```
 
-### Compile and Hot-Reload for Development
+## Fejlesztői szerver indítása
 
-```sh
+```bash
 npm run dev
 ```
 
-### Compile and Minify for Production
+## Elérés
 
-```sh
-npm run build
+```text
+http://localhost:5173
+```
+
+---
+
+# Docker
+
+## Docker image build
+
+```bash
+docker build -t hello-devops:v1 .
+```
+
+## Docker container futtatás
+
+```bash
+docker run -p 5173:5173 hello-devops:v1
+```
+
+## Elérés
+
+```text
+http://localhost:5173
+```
+
+---
+
+# Docker Hub Registry
+
+## Registry URL
+
+https://hub.docker.com/r/verfurdo/hello-devops
+
+## Image pull
+
+```bash
+docker pull verfurdo/hello-devops
+```
+
+## Container futtatása Docker Hub image-ből
+
+```bash
+docker run -p 5173:5173 verfurdo/hello-devops
+```
+
+---
+
+# CI Pipeline
+
+GitHub Actions pipeline automatikusan:
+
+- pullolja a kódot,
+- buildeli az alkalmazást,
+- buildeli a Docker image-et,
+- pusholja Docker Hub registrybe.
+
+Pipeline fájl:
+
+```text
+.github/workflows/ci.yml
+```
+
+A pipeline minden push esetén lefut a `main` branchre.
+
+---
+
+# Dev Container
+
+A projekt támogatja a VS Code Dev Container használatát.
+
+## Szükséges
+
+- Docker Desktop
+- VS Code
+- Dev Containers extension
+
+## Indítás
+
+VS Code-ban:
+
+```text
+Ctrl + Shift + P
+```
+
+Majd:
+
+```text
+Dev Containers: Reopen in Container
+```
+
+## Konténeren belüli indítás
+
+```bash
+npm run dev
+```
+
+---
+
+# Terraform Infrastructure
+
+Terraform Docker provider használatával infrastruktúra definiálása történt.
+
+A Terraform:
+- lehúzza a Docker Hub image-et,
+- létrehozza a Docker konténert,
+- megnyitja a szükséges portot.
+
+Terraform fájl:
+
+```text
+terraform/main.tf
+```
+
+## Provider
+
+Docker provider
+
+## Terraform parancsok
+
+### Inicializálás
+
+```bash
+terraform init
+```
+
+### Terv megtekintése
+
+```bash
+terraform plan
+```
+
+### Infrastruktúra létrehozása
+
+```bash
+terraform apply
+```
+
+### Infrastruktúra törlése
+
+```bash
+terraform destroy
+```
+
+## Terraform elérés
+
+```text
+http://localhost:5174
+```
+
+---
+
+# Használt technológiák
+
+- Vue.js
+- Vite
+- Docker
+- Docker Hub
+- GitHub Actions
+- Terraform
+- Dev Containers
+
+---
+
+# Repository struktúra
+
+```text
+hello-devops/
+│
+├── .devcontainer/
+├── .github/workflows/
+├── terraform/
+├── src/
+├── public/
+├── Dockerfile
+├── README.md
+├── package.json
+└── vite.config.js
 ```
