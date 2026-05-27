@@ -37,6 +37,28 @@ http://localhost:5173
 
 ---
 
+## Build és futtatás
+
+### Build készítése
+
+```bash
+npm run build
+```
+
+A buildelt fájlok a `dist` mappába kerülnek.
+
+### Build előnézet futtatása
+
+A `dist/index.html` fájlt nem ajánlott közvetlenül megnyitni (`file://`), mert a böngésző blokkolhatja a JS és CSS fájlokat.
+
+A helyes futtatás:
+
+```bash
+npm run preview
+```
+
+Ezután a terminálban megjelenő localhost címen érhető el az alkalmazás.
+
 # Docker
 
 ## Docker image build
