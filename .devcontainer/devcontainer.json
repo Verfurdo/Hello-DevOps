@@ -1,0 +1,9 @@
+{
+  "name": "Hello DevOps",
+
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:20",
+
+  "forwardPorts": [5173],
+
+  "postCreateCommand": "npm install"
+}
