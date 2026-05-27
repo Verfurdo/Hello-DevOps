@@ -40,3 +40,8 @@ __screenshots__/
 
 # Docker image
 *.tar
+
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.backup
