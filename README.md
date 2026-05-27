@@ -1,6 +1,6 @@
 # Hello-DevOps
 
-Vue.js + Docker + CI/CD + Terraform + Dev Container projekt.
+Vue.js + Docker + CI/CD + Terraform + Dev Container + Deploy projekt.
 
 ---
 
@@ -42,13 +42,13 @@ http://localhost:5173
 ## Docker image build
 
 ```bash
-docker build -t hello-devops:v1 .
+docker build -t hello-devops .
 ```
 
 ## Docker container futtatás
 
 ```bash
-docker run -p 5173:5173 hello-devops:v1
+docker run -p 5173:5173 hello-devops
 ```
 
 ## Elérés
