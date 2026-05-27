@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <h1>Hello DevOps beadandó feladat - Version 1.0</h1>
+    <h1>Hello DevOps beadandó feladat</h1>
     <p>Vue + Docker + CI + Deploy</p>
 
     <img src="https://vuejs.org/images/logo.png" alt="Vue Logo" />
