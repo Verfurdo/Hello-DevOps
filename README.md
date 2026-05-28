@@ -1,6 +1,16 @@
 # Hello-DevOps
 
-Vue.js + Docker + CI/CD + Terraform + Dev Container + Deploy projekt.
+Ez a projekt DevOps technológiák használatát mutatja be.
+Az alkalmazás Vue.js és Vite használatával készült.
+
+Felhasznált technológiák:
+
+Git verziókezelés
+Docker konténerizáció
+CI/CD automatizáció
+Terraform infrastruktúra-kezelés
+Dev Container fejlesztői környezet
+Render alapú deploy
 
 ---
 
@@ -12,18 +22,47 @@ Vue.js + Docker + CI/CD + Terraform + Dev Container + Deploy projekt.
 - Docker Hub registry publish
 - Dev Container támogatás
 - Terraform Infrastructure as Code
+- Render Deploy
 
 ---
 
+# Requirements
+
+## Required
+
+- VS Code https://code.visualstudio.com/download
+- VS Code Vue (Official)
+- VS Code Dev Containers extension
+- Git: https://git-scm.com/
+- Node.js: https://nodejs.org/
+- Docker Desktop: https://www.docker.com/products/docker-desktop/
+- Terraform: https://developer.hashicorp.com/terraform/downloads
+
+
 # Projekt indítása lokálisan
+
+## Repo klónozása
+
+```bash
+VS Code terminálban célszerű a mappát kiválasztani előtte ahova a clone kerüljön majd ird be:
+git clone https://github.com/verfurdo/hello-devops.git
+```
 
 ## Függőségek telepítése
 
 ```bash
+VS Code terminálban lépj be a projekt mappájába ahol `package.json` fájl is található majd:
 npm install
+
+Ha az `npm install` parancs nem indul el futtasd ezt:
+
+```
+Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned
+Ezután indítsd újra a VS Code terminált.
+```
 ```
 
-## Fejlesztői szerver indítása
+## Webszerver indítása
 
 ```bash
 npm run dev
@@ -45,13 +84,13 @@ http://localhost:5173
 npm run build
 ```
 
-A buildelt fájlok a `dist` mappába kerülnek.
+A buildelt fájlok a `dist` mappába kerülnek majd.
 
-### Build előnézet futtatása
+### Build futtatása
 
-A `dist/index.html` fájlt nem ajánlott közvetlenül megnyitni (`file://`), mert a böngésző blokkolhatja a JS és CSS fájlokat.
+A `dist/index.html` fájlt nem ajánlott közvetlenül megnyitni, mert a böngésző blokkolhatja a JS és CSS fájlokat.
 
-A helyes futtatás:
+A build futtatása ezért:
 
 ```bash
 npm run preview
@@ -122,7 +161,7 @@ A pipeline minden push esetén lefut a `main` branchre.
 
 # Dev Container
 
-A projekt támogatja a VS Code Dev Container használatát.
+VS Code Dev Container használata.
 
 ## Szükséges
 
@@ -154,7 +193,7 @@ npm run dev
 
 # Terraform Infrastructure
 
-Terraform Docker provider használatával infrastruktúra definiálása történt.
+Terraform Docker provider használatával infrastruktúra definiálása is megtörtént.
 
 A Terraform:
 - lehúzza a Docker Hub image-et,
@@ -176,6 +215,7 @@ Docker provider
 ### Inicializálás
 
 ```bash
+Docker Desktop alkalmazást indítsd el majd lépj be a terraform könyvtárba a vscode terminálban
 terraform init
 ```
 
@@ -189,18 +229,21 @@ terraform plan
 
 ```bash
 terraform apply
-```
-
-### Infrastruktúra törlése
-
-```bash
-terraform destroy
+A kérdésre írd be: yes
 ```
 
 ## Terraform elérés
 
 ```text
+Ezután menni fog az elérés:
 http://localhost:5174
+```
+
+### Infrastruktúra törlése kilépés terraformból
+
+```bash
+terraform destroy
+A kérdésre írd be: yes
 ```
 
 ---
@@ -211,9 +254,11 @@ http://localhost:5174
 - Vite
 - Docker
 - Docker Hub
+- Git
 - GitHub Actions
 - Terraform
 - Dev Containers
+- Render Deploy
 
 ---
 

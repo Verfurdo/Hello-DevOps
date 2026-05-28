@@ -1,7 +1,7 @@
 <template>
   <div class="container">
-    <h1>Hello DevOps beadandó feladat</h1>
-    <p>Vue + Docker + CI + Deploy</p>
+    <h1>Hello DevOps</h1>
+    <p>Vue.js - Vite + Docker + CI/CD + Terraform + Dev Container + Deploy</p>
 
     <img src="https://vuejs.org/images/logo.png" alt="Vue Logo" />
 
