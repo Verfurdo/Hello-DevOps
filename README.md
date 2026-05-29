@@ -3,26 +3,18 @@
 Ez a projekt DevOps technológiák használatát mutatja be.
 Az alkalmazás Vue.js és Vite használatával készült.
 
-Felhasznált technológiák:
-
-Git verziókezelés
-Docker konténerizáció
-CI/CD automatizáció
-Terraform infrastruktúra-kezelés
-Dev Container fejlesztői környezet
-Render alapú deploy
-
 ---
 
-# Projekt funkciók
+# Használt technológiák
 
-- Vue.js alkalmazás
-- Dockerizált futtatás
+- Vue.js - Vite alkalmazás
+- Git verziókezelés
+- Docker konténerizáció
+- Docker Hub registry
 - GitHub Actions CI pipeline
-- Docker Hub registry publish
-- Dev Container támogatás
+- Dev Container fejlesztői környezet
 - Terraform Infrastructure as Code
-- Render Deploy
+- Render Deploy CD automatizáció
 
 ---
 
@@ -31,7 +23,7 @@ Render alapú deploy
 ## Required
 
 - VS Code https://code.visualstudio.com/download
-- VS Code Vue (Official)
+- VS Code Vue (Official) extension
 - VS Code Dev Containers extension
 - Git: https://git-scm.com/
 - Node.js: https://nodejs.org/
@@ -97,6 +89,8 @@ npm run preview
 ```
 
 Ezután a terminálban megjelenő localhost címen érhető el az alkalmazás.
+
+---
 
 # Docker
 
@@ -248,17 +242,28 @@ A kérdésre írd be: yes
 
 ---
 
-# Használt technológiák
+## Cloud Deployment (CD)
 
-- Vue.js
-- Vite
-- Docker
-- Docker Hub
-- Git
-- GitHub Actions
-- Terraform
-- Dev Containers
-- Render Deploy
+Az alkalmazás deployolása Render használatával történt.
+
+### Szolgáltató
+- Render
+
+### Deploy lépések röviden
+1. A projekt feltöltése GitHub repository-ba.
+2. Render fiók belépés.
+3. Új Web Service létrehozása a GitHub repository alapján.
+4. Build és start parancsok beállítása.
+5. Automatikus deploy engedélyezése.
+
+### Automatikus CD
+Minden push után a Render automatikusan:
+- lehúzza a legfrissebb kódot,
+- buildeli az alkalmazást,
+- újra deployolja a webalkalmazást.
+
+### Publikus URL
+- https://folyamatban.onrender.com
 
 ---
 

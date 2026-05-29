@@ -1,7 +1,11 @@
 <template>
   <div class="container">
     <h1>Hello DevOps</h1>
-    <p>Vue.js - Vite + Docker + CI/CD + Terraform + Dev Container + Deploy</p>
+
+    <p>  Ez a projekt DevOps technológiák használatát mutatja be. </p>
+    <p>Az alkalmazás Vue.js és Vite használatával készült. </p>
+
+    <p>Docker + CI/CD + Terraform + Dev Container + Render Deploy</p>
 
     <img src="https://vuejs.org/images/logo.png" alt="Vue Logo" />
 
